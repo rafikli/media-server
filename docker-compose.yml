@@ -10,9 +10,9 @@ services:
       - TZ=America/Sao_Paulo
       # - JELLYFIN_PublishedServerUrl=192.168.15.16 #optional
     volumes:
-      - /config/jellyfin:/config
-      - /media/tv:/data/tvshows
-      - /media/movies:/data/movies
+      - ~/config/jellyfin:/config
+      - ~/media/tv:/data/tvshows
+      - ~/media/movies:/data/movies
     ports:
       - 8096:8096
       - 8920:8920 #optional
@@ -33,9 +33,9 @@ services:
       # - PEERPORT=peerport #optional
       # - HOST_WHITELIST=dnsname list #optional
     volumes:
-      - /config/transmission:/config
-      - /media/downloads:/downloads
-      - /media/watch:/watch
+      - ~/config/transmission:/config
+      - ~/media/downloads:/downloads
+      - ~/media/watch:/watch
     ports:
       - 9091:9091
       - 51413:51413
