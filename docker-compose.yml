@@ -55,17 +55,31 @@ services:
     ports:
       - 8989:8989
     restart: unless-stopped
-    # radarr:
-    # image: lscr.io/linuxserver/radarr
-    # container_name: radarr
-    # environment:
-    #   - PUID=1000
-    #   - PGID=1000
-    #   - TZ=Europe/London
-    # volumes:
-    #   - /path/to/data:/config
-    #   - /path/to/movies:/movies #optional
-    #   - /path/to/downloadclient-downloads:/downloads #optional
-    # ports:
-    #   - 7878:7878
-    # restart: unless-stopped
+    radarr:
+    image: lscr.io/linuxserver/radarr
+    container_name: radarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Sao_Paulo
+    volumes:
+      - /home/liber/config/radarr:/config
+      - /home/liber/media/movies:/movies #optional
+      - /home/liber/media/downloads:/downloads #optional
+    ports:
+      - 7878:7878
+    restart: unless-stopped
+  bazarr:
+    image: lscr.io/linuxserver/bazarr
+    container_name: bazarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Sao_Paulo
+    volumes:
+      - /home/liber/config/bazarr:/config
+      - /home/liber/media/movies:/movies #optional
+      - /home/liber/media/tv:/tv #optional
+    ports:
+      - 6767:6767
+    restart: unless-stopped
