@@ -55,7 +55,7 @@ services:
     ports:
       - 8989:8989
     restart: unless-stopped
-    radarr:
+  radarr:
     image: lscr.io/linuxserver/radarr
     container_name: radarr
     environment:
